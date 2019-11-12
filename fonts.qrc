@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/font/Roboto-Black.ttf</file>
+        <file>resources/font/Roboto-BlackItalic.ttf</file>
+        <file>resources/font/Roboto-Bold.ttf</file>
+        <file>resources/font/Roboto-BoldItalic.ttf</file>
+        <file>resources/font/Roboto-Italic.ttf</file>
+        <file>resources/font/Roboto-Light.ttf</file>
+        <file>resources/font/Roboto-LightItalic.ttf</file>
+        <file>resources/font/Roboto-Medium.ttf</file>
+        <file>resources/font/Roboto-MediumItalic.ttf</file>
+        <file>resources/font/Roboto-Regular.ttf</file>
+        <file>resources/font/Roboto-Thin.ttf</file>
+        <file>resources/font/Roboto-ThinItalic.ttf</file>
+    </qresource>
+</RCC>
