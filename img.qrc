@@ -1,3 +1,5 @@
 <RCC>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>resources/images/buttons/new-common.svg</file>
+    </qresource>
 </RCC>
