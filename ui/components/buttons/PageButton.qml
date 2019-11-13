@@ -4,7 +4,6 @@ import QtQuick.Controls 2.13
 
 Item {
 	id: pageButton;
-	implicitWidth: label.implicitWidth;
 
 	property color highlightColor;
 	property alias font: label.font;
@@ -13,9 +12,10 @@ Item {
 
 	MouseArea {
 		id: mouseArea;
-		anchors.fill: parent;
 		hoverEnabled: true;
 		cursorShape: Qt.PointingHandCursor;
+		implicitHeight: layout.implicitHeight;
+		implicitWidth: layout.implicitWidth;
 
 		Rectangle {
 			anchors.fill: parent;
@@ -26,17 +26,16 @@ Item {
 
 		ColumnLayout {
 			id: layout;
-			anchors.fill: parent;
 
 			Image {
 				id: image;
-				sourceSize.width: pageButton.implicitWidth;
-
+				sourceSize.height: 100;
 				fillMode: Image.PreserveAspectFit;
 			}
 
 			Text {
 				id: label;
+				Layout.alignment: Qt.AlignHCenter;
 				font {
 					pointSize: 14;
 					family: "Roboto Bold";
