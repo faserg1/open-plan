@@ -16,12 +16,15 @@ Item {
 		cursorShape: Qt.PointingHandCursor;
 		implicitHeight: layout.implicitHeight;
 		implicitWidth: layout.implicitWidth;
+		anchors.centerIn: parent;
 
 		Rectangle {
 			anchors.fill: parent;
 
 			visible: parent.containsMouse;
 			color: highlightColor;
+			opacity: 0.2;
+			radius: 10;
 		}
 
 		ColumnLayout {

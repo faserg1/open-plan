@@ -4,15 +4,16 @@ import QtQuick.Layouts 1.13
 import "../components/buttons";
 
 Item {
-    id: start
-    RowLayout {
+	id: start;
+	RowLayout {
 		anchors.centerIn: parent;
 		PageButton {
+			Layout.alignment: Qt.AlignCenter;
 			text: "New Project";
 			imageSource: "/resources/images/buttons/new-common.svg";
-			highlightColor: "#d9f2ff";
+			highlightColor: "#4287f5";
 
 			height: 80;
 		}
-    }
+	}
 }
