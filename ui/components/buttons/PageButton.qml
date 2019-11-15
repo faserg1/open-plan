@@ -10,6 +10,8 @@ Item {
 	property alias text: label.text;
 	property alias imageSource: image.source;
 
+	signal clicked();
+
 	MouseArea {
 		id: mouseArea;
 		hoverEnabled: true;
@@ -17,6 +19,10 @@ Item {
 		implicitHeight: layout.implicitHeight;
 		implicitWidth: layout.implicitWidth;
 		anchors.centerIn: parent;
+
+		onClicked: {
+			pageButton.clicked();
+		}
 
 		Rectangle {
 			anchors.fill: parent;

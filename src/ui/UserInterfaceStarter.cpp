@@ -1,6 +1,7 @@
 #include "UserInterfaceStarter.hpp"
 #include <QFontDatabase>
 #include <QCoreApplication>
+#include "QMLTypesRegistrator.hpp"
 
 UserInterfaceStarter::UserInterfaceStarter(QObject *parent) :
 	QObject(parent), url("qrc:/ui/Main.qml")
@@ -40,4 +41,10 @@ void UserInterfaceStarter::loadFonts()
 	{
 		QFontDatabase::addApplicationFont("qrc:/resources/font/" + fontFileName);
 	}
+}
+
+void UserInterfaceStarter::registerTypes()
+{
+	QMLTypesRegistrator registrator(this);
+	registrator.registerQMLTypes(engine);
 }

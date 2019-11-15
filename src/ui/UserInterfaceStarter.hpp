@@ -16,6 +16,7 @@ public slots:
 	void start();
 private:
 	void loadFonts();
+	void registerTypes();
 private:
 	QQmlApplicationEngine engine;
 	const QUrl url;

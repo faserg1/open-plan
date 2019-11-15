@@ -11,7 +11,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         src/main.cpp \
+        src/project/ProjectManager.cpp \
+        src/project/Project.cpp \
+        src/ui/QMLTypesRegistrator.cpp \
         src/ui/UserInterfaceStarter.cpp
+
+HEADERS += \
+    src/project/ProjectManager.hpp \
+    src/project/Project.hpp \
+    src/ui/QMLTypesRegistrator.hpp \
+    src/ui/UserInterfaceStarter.hpp
 
 RESOURCES += qml.qrc \
     fonts.qrc \
@@ -27,6 +36,3 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    src/ui/UserInterfaceStarter.hpp
