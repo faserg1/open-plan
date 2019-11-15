@@ -8,9 +8,7 @@ QMLTypesRegistrator::QMLTypesRegistrator(QObject *parent) : QObject(parent)
 
 void QMLTypesRegistrator::registerQMLTypes(QQmlApplicationEngine &engine)
 {
-	constexpr const int majorVersion = 1;
-	constexpr const int minorVersion = 1;
+	Q_UNUSED(engine)
 
-	//qmlRegisterType<ProjectManager>("Project", majorVersion, minorVersion, "ProjectManager");
-	//qmlRegisterSingletonType<ProjectManager>()
+	addSignleton<ProjectManager>("Projects", "ProjectManager");
 }

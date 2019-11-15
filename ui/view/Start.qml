@@ -3,6 +3,8 @@ import QtQuick.Layouts 1.13
 
 import "../components/buttons";
 
+import Projects 1.0;
+
 Item {
 	id: start;
 	RowLayout {
@@ -16,7 +18,7 @@ Item {
 			height: 80;
 
 			onClicked: {
-
+				ProjectManager.newProject();
 			}
 		}
 	}

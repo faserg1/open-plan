@@ -16,9 +16,11 @@ public:
 signals:
 
 public slots:
-	QSharedPointer<Project> newProject();
+	Project *newProject();
+	void closeProject(Project *project);
+	void saveProject(Project *project);
 private:
-	QVector<QSharedPointer<Project>> m_projects;
+	QVector<Project*> m_projects;
 };
 
 #endif // PROJECTMANAGER_HPP

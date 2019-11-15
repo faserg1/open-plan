@@ -13,6 +13,7 @@ UserInterfaceStarter::UserInterfaceStarter(QObject *parent) :
 				QCoreApplication::exit(-1);
 		}, Qt::QueuedConnection);
 	loadFonts();
+	registerTypes();
 }
 
 void UserInterfaceStarter::start()
