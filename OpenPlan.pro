@@ -14,13 +14,18 @@ SOURCES += \
         src/project/ProjectManager.cpp \
         src/project/Project.cpp \
         src/ui/QMLTypesRegistrator.cpp \
-        src/ui/UserInterfaceStarter.cpp
+        src/ui/UserInterfaceStarter.cpp \
+        src/ui/WindowManager.cpp \
+        src/ui/WindowManagerLink.cpp
 
 HEADERS += \
     src/project/ProjectManager.hpp \
     src/project/Project.hpp \
     src/ui/QMLTypesRegistrator.hpp \
-    src/ui/UserInterfaceStarter.hpp
+    src/ui/TypeRegistrator.hpp \
+    src/ui/UserInterfaceStarter.hpp \
+    src/ui/WindowManager.hpp \
+    src/ui/WindowManagerLink.hpp
 
 RESOURCES += qml.qrc \
     fonts.qrc \

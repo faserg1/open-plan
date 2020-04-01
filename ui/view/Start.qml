@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.13
 import "../components/buttons";
 
 import Projects 1.0;
+import WindowManager 1.0;
 
 Item {
 	id: start;
@@ -18,7 +19,8 @@ Item {
 			height: 80;
 
 			onClicked: {
-				ProjectManager.newProject();
+				let project = ProjectManager.newProject();
+				WindowManager.get("main").hide();
 			}
 		}
 	}
