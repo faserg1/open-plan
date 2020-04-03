@@ -17,9 +17,9 @@ public slots:
 private:
 	void loadFonts();
 	void registerTypes();
+	void registerWindows();
 private:
 	QQmlApplicationEngine engine;
-	const QUrl url;
 };
 
 #endif // USERINTERFACESTARTER_HPP

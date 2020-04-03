@@ -8,7 +8,7 @@ class WindowManager;
 class WindowManagerLink : public QObject
 {
 	Q_OBJECT
-	Q_PROPERTY(QString name READ getName WRITE setName);
+	Q_PROPERTY(QString name READ getName WRITE setName NOTIFY nameChanged);
 	Q_PROPERTY(QQuickWindow *window READ getWindow WRITE setWindow);
 public:
 	explicit WindowManagerLink(QObject *parent = nullptr);
@@ -19,6 +19,7 @@ public:
 	QQuickWindow *getWindow();
 	void setWindow(QQuickWindow *window);
 signals:
+	void nameChanged(QString);
 private:
 	QString m_name;
 	QQuickWindow *m_window;

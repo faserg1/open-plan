@@ -2,23 +2,22 @@
 #include <QFontDatabase>
 #include <QCoreApplication>
 #include "QMLTypesRegistrator.hpp"
+#include "TypeRegistrator.hpp"
+#include "WindowManager.hpp"
 
 UserInterfaceStarter::UserInterfaceStarter(QObject *parent) :
-	QObject(parent), url("qrc:/ui/Main.qml")
+	QObject(parent)
 {
-	QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, this,
-		[this](QObject *obj, const QUrl &objUrl)
-		{
-			if (!obj && url == objUrl)
-				QCoreApplication::exit(-1);
-		}, Qt::QueuedConnection);
 	loadFonts();
 	registerTypes();
+	registerWindows();
 }
 
 void UserInterfaceStarter::start()
 {
-	engine.load(url);
+	auto *windowManager = engine.singletonInstance<WindowManager*>(getIndex<WindowManager>());
+	auto *welcomeWindow = windowManager->get("welcome");
+	welcomeWindow->show();
 }
 
 void UserInterfaceStarter::loadFonts()
@@ -48,4 +47,11 @@ void UserInterfaceStarter::registerTypes()
 {
 	QMLTypesRegistrator registrator(this);
 	registrator.registerQMLTypes(engine);
+}
+
+void UserInterfaceStarter::registerWindows()
+{
+	auto *windowManager = engine.singletonInstance<WindowManager*>(getIndex<WindowManager>());
+	windowManager->registerWindow(engine, "welcome", QUrl("qrc:/ui/window/WelcomeWindow.qml"));
+	windowManager->registerWindow(engine, "project", QUrl("qrc:/ui/window/ProjectWindow.qml"));
 }

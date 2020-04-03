@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>ui/Main.qml</file>
         <file>ui/view/Start.qml</file>
         <file>ui/components/buttons/PageButton.qml</file>
+        <file>ui/window/WelcomeWindow.qml</file>
+        <file>ui/window/ProjectWindow.qml</file>
+        <file>ui/components/PWindow.qml</file>
     </qresource>
 </RCC>

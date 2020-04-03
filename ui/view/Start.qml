@@ -20,7 +20,8 @@ Item {
 
 			onClicked: {
 				let project = ProjectManager.newProject();
-				WindowManager.get("main").hide();
+				WindowManager.get("welcome").hide();
+				WindowManager.get("project").show();
 			}
 		}
 	}

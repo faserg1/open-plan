@@ -21,6 +21,8 @@ QString WindowManagerLink::getName()
 
 void WindowManagerLink::setName(QString name)
 {
+	if (name.isEmpty())
+		return;
 	if (!m_name.isEmpty() && m_name != name)
 		return;
 	m_name = name;
